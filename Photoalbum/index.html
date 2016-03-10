@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <title>Photoalbum</title>
     <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/register-style.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/q/q.js"></script>
     <script src="node_modules/shimney-sammy/main.js"></script>
     <script src="node_modules/mustache/mustache.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
+<header class="container">
+    <div class="row">
+        <h1 class="col-lg-3 col-md-4 col-sm-4">
+            <a href="#">Photo Album</a>
+        </h1>
+        <nav class="col-lg-9 col-md-8 col-sm-8">
+            <ul class="nav nav-tabs" role="tablist">
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/Login">Login</a></li>
+                <li><a href="#/Register">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <h2 id="greeting"></h2>
-<ul>
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/Login">Login</a></li>
-    <li><a href="#/Register">Register</a></li>
-    <li><a href="#/Pictures">Pictures</a></li>
-</ul>
+<section class="row">
+</section>
 <div id="wrapper"></div>
 <script src="scripts/views/homeView.js"></script>
 <script src="scripts/views/loginView.js"></script>
