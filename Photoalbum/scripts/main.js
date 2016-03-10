@@ -1,7 +1,7 @@
 var app = app || {};
 
 (function() {
-    var model = app.model.load('kid_W1-EIBMS1W', '2ca76dc7f93547c6aab27095735bacad');
+    var model = app.model.load('kid_W1-EIBMS1W', 'af951f4856d647b59a1b30da5bf7fbfb');
     var controller = app.controller.load(model);
 
     app.router = Sammy(function () {
@@ -21,6 +21,11 @@ var app = app || {};
         this.get('#/Register', function () {
             controller.getRegisterPage(selector);
             $('title').text('Photoalbum - Register')
+        });
+
+        this.get('#/Pictures', function () {
+            controller.getPicturesPage(selector);
+            $('title').text('Photoalbum - Pictures')
         });
     });
 

@@ -17,6 +17,15 @@ app.controller = (function() {
         app.registerView.load(selector);
     };
 
+    Controller.prototype.getPicturesPage = function (selector) {
+        this.model.getPictures()
+            .then(function (data) {
+                app.picturesView.load(selector, data);
+            }, function (error) {
+                console.log(error);
+            })
+    };
+
     return {
         load: function (model) {
             return new Controller(model);
