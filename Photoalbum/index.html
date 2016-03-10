@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Photoalbum</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/shimney-sammy/main.js"></script>
+    <script src="node_modules/mustache/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
+</head>
+<body>
+<h2 id="greeting"></h2>
+<ul>
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/Login">Login</a></li>
+    <li><a href="#/Register">Register</a></li>
+</ul>
+<div id="wrapper"></div>
+<script src="scripts/views/homeView.js"></script>
+<script src="scripts/views/loginView.js"></script>
+<script src="scripts/views/registerView.js"></script>
+<script src="scripts/models/pictureModel.js"></script>
+<script src="scripts/models/requester.js"></script>
+<script src="scripts/models/picturesRepoModel.js"></script>
+<script src="scripts/controllers/controller.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
