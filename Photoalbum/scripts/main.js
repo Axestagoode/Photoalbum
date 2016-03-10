@@ -1,7 +1,7 @@
 var app = app || {};
 
 (function() {
-    var model = app.model.load('https://baas.kinvey.com/appdata/kid_W1-EIBMS1W/');
+    var model = app.model.load('kid_W1-EIBMS1W', '2ca76dc7f93547c6aab27095735bacad');
     var controller = app.controller.load(model);
 
     app.router = Sammy(function () {

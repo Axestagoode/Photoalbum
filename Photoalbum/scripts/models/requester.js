@@ -1,53 +1,52 @@
 var app = app || {};
 
 app.requester = (function() {
-    function Requester(baseUrl) {
-        this._baseUrl = baseUrl;
+    function Requester(appId, appSecret) {
+        this.appId = appId;
+        this.appSecret = appSecret;
+        this.baseUrl = 'https://baas.kinvey.com/';
     }
 
-    Requester.prototype.get = function (serviceUrl) {
-        var headers = getHeaders();
-        var url = this._baseUrl + serviceUrl;
+    Requester.prototype.makeRequest = function(method, url, data, useSession) {
+        var token,
+            defer = Q.defer(),
+            _this = this,
+            options = {
+                method: method,
+                url: url,
+                success: function (data) {
+                    defer.resolve(data);
+                },
+                error: function (error) {
+                    defer.reject(error);
+                }
+            };
 
-        return makeRequest('GET', headers, url);
-    };
-
-    function makeRequest(method, headers, url, data) {
-        var deffer = Q.defer();
-
-        $.ajax({
-            method: method,
-            headers: headers,
-            url: url,
-            data: JSON.stringify(data),
-            success: function (data) {
-                deffer.resolve(data);
-            },
-            error: function (error) {
-                deffer.reject(error);
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!useSession) {
+                    token = _this.appId + ':' + _this.appSecret;
+                    xhr.setRequestHeader('Authorization', 'Basic ' + btoa(token));
+                } else {
+                    token = sessionStorage['sessionAuth'];
+                    xhr.setRequestHeader('Authorization', 'Kinvey ' + token);
+                }
+                if(data) {
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    settings.data = JSON.stringify(data);
+                    return true;
+                }
             }
         });
 
-        return deffer.promise;
-    }
+        $.ajax(options);
 
-    function getHeaders() {
-        var headers = {
-            'APP_KEY' : 'kid_W1-EIBMS1W',
-            'APP_SECRET' : '2ca76dc7f93547c6aab27095735bacad',
-            'Content-Type' : 'application/json'
-        };
-
-        if(sessionStorage['logged-in']) {
-            headers['Session-Token'] = sessionStorage['logged-in'];
-        }
-
-        return headers;
-    }
+        return defer.promise;
+    };
 
     return {
-        load: function (baseUrl) {
-            return new Requester(baseUrl);
+        load: function (appId, appSecret) {
+            return new Requester(appId, appSecret);
         }
     }
 }());
