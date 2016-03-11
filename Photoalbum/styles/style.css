@@ -38,3 +38,35 @@ aside {
 input {
     display: block;
 }
+
+#Nature {
+    width: 150px;
+    height: 150px;
+    background-image: url("../resources/logo-nature.png");
+    background-repeat: no-repeat;
+}
+
+#Animals {
+    width: 150px;
+    height: 150px;
+    background-image: url("../resources/logo-animals.png");
+    background-repeat: no-repeat;
+}
+
+#Portrait {
+    width: 150px;
+    height: 150px;
+    background-image: url("../resources/logo-portraits.png");
+    background-repeat: no-repeat;
+}
+
+#Abstract {
+    width: 150px;
+    height: 150px;
+    background-image: url("../resources/logo-abstract.png");
+    background-repeat: no-repeat;
+}
+
+h3 {
+    text-align: center;
+}

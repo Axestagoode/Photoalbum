@@ -26,6 +26,24 @@ app.controller = (function() {
             })
     };
 
+    Controller.prototype.getCategoriesPage = function (selector) {
+        this.model.getCategories()
+            .then(function (data) {
+                app.categoriesView.load(selector, data);
+            }, function (error) {
+                console.log(error);
+            })
+    };
+
+    Controller.prototype.getPicturesByCategoryPage = function (selector, category) {
+        this.model.getPicturesByCategory(category)
+            .then(function (data) {
+                app.picturesView.load(selector, data);
+            }, function (error) {
+                console.log(error);
+            })
+    };
+
     return {
         load: function (model) {
             return new Controller(model);

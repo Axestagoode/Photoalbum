@@ -1,0 +1,10 @@
+<ul>
+    {{#categories}}
+    <li>
+        <h3><strong>{{name}}</strong></h3>
+        <a href="#/Pictures-by-category"><div id="{{name}}"></div></a>
+        <div>Pictures: {{pictures.length}}</div>
+        <br/>
+    </li>
+    {{/categories}}
+</ul>

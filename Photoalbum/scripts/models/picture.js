@@ -4,6 +4,8 @@ var Picture = (function() {
         this.url = url;
         this.category = category;
         this.author = author;
+        this.likes = 0;
+        this.comments = [];
         this.id = id;
     }
 

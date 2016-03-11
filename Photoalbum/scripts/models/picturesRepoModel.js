@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.model = (function() {
+app.picturesModel = (function() {
     function PicturesRepoModel(appId, appSecret) {
         this._requester = app.requester.load(appId, appSecret);
         this.picturesRepo = {
@@ -22,6 +22,37 @@ app.model = (function() {
                             pictureData.url,
                             pictureData.category,
                             pictureData.author,
+                            pictureData.likes,
+                            pictureData.comments,
+                            pictureData._id);
+                    _this.picturesRepo['pictures'].push(picture);
+                });
+
+                deffer.resolve(_this.picturesRepo);
+            }, function (error) {
+                deffer.reject(error);
+            });
+
+        return deffer.promise;
+    };
+
+
+    PicturesRepoModel.prototype.getPicturesByCategory = function (category) {
+        var deffer = Q.defer();
+        var _this = this;
+        this.picturesRepo['pictures'].length = 0;
+
+        this._requester.makeRequest('GET', 'https://baas.kinvey.com/appdata/kid_W1-EIBMS1W/pictures/?query={"category.name":' + category + '}')
+            .then(function (data) {
+                data.forEach(function(pictureData) {
+                    console.log(pictureData);
+                    var picture =
+                        new Picture(pictureData.name,
+                            pictureData.url,
+                            pictureData.category,
+                            pictureData.author,
+                            pictureData.likes,
+                            pictureData.comments,
                             pictureData._id);
                     _this.picturesRepo['pictures'].push(picture);
                 });
