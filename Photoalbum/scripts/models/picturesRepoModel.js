@@ -41,6 +41,8 @@ app.picturesModel = (function() {
         var deffer = Q.defer();
         var _this = this;
         this.picturesRepo['pictures'].length = 0;
+        var query = '?query={"category.name":' + category + '}';
+        console.log(query);
 
         this._requester.makeRequest('GET', 'https://baas.kinvey.com/appdata/kid_W1-EIBMS1W/pictures/?query={"category.name":' + category + '}')
             .then(function (data) {

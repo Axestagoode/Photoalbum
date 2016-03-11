@@ -1,15 +1,15 @@
 var app = app || {};
 
 (function() {
-    var modelOne = app.picturesModel.load('kid_W1-EIBMS1W', 'af951f4856d647b59a1b30da5bf7fbfb');
-    var modelTwo = app.categoryModel.load('kid_W1-EIBMS1W', 'af951f4856d647b59a1b30da5bf7fbfb');
-    var controllerOne = app.controller.load(modelOne);
-    var controllerTwo = app.controller.load(modelTwo);
+    var picturesModel = app.picturesModel.load('kid_W1-EIBMS1W', 'af951f4856d647b59a1b30da5bf7fbfb');
+    var categoriesModel = app.categoryModel.load('kid_W1-EIBMS1W', 'af951f4856d647b59a1b30da5bf7fbfb');
+    var controllerOne = app.controller.load(picturesModel);
+    var controllerTwo = app.controller.load(categoriesModel);
+    var category ='';
 
     app.router = Sammy(function () {
         var selector = '#wrapper',
-            greeting = '#greeting',
-            category = "#category";
+            greeting = '#greeting';
 
         this.get('#/', function () {
             controllerOne.getHomePage(selector);
@@ -31,14 +31,21 @@ var app = app || {};
             $('title').text('Photoalbum - Pictures')
         });
 
-        this.get('#/Pictures-by-category', function () {
-            controllerOne.getPicturesByCategoryPage(selector, category);
-            $('title').text('Photoalbum - Pictures')
-        });
-
         this.get('#/Categories', function () {
             controllerTwo.getCategoriesPage(selector);
-            $('title').text('Photoalbum - Categories')
+            $('title').text('Photoalbum - Categories');
+        });
+
+        this.get('#/Pictures-by-category', function () {
+            $('a[href="#/Pictures-by-category"]').click(function(event){
+                var div = event.target,
+                    $div = $(div);
+                category = $div.attr("id");
+                console.log(category);
+            });
+
+            controllerOne.getPicturesByCategoryPage(selector, category);
+            $('title').text('Photoalbum - Pictures')
         });
     });
 
