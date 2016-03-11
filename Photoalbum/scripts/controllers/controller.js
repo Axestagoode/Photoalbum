@@ -44,6 +44,15 @@ app.controller = (function() {
             })
     };
 
+    Controller.prototype.getUsersPage = function (selector, category) {
+        this.model.getUsers(category)
+            .then(function (data) {
+                app.usersView.load(selector, data);
+            }, function (error) {
+                console.log(error);
+            })
+    };
+
     return {
         load: function (model) {
             return new Controller(model);
