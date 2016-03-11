@@ -76,3 +76,13 @@ input {
 h3 {
     text-align: center;
 }
+
+span {
+    float: right;
+}
+
+span> img:hover {
+    cursor: pointer;
+    width: 110%;
+    height: 110%;
+}

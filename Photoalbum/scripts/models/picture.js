@@ -1,12 +1,12 @@
 var Picture = (function() {
-    function Picture (name, url, category, author, id) {
+    function Picture (name, url, category, author, id, likes) {
         this.name = name;
         this.url = url;
         this.category = category;
         this.author = author;
-        this.likes = 0;
-        this.comments = [];
         this.id = id;
+        this.likes = likes || 0;
+        this.comments = [];
     }
 
     return Picture

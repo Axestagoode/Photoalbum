@@ -30,7 +30,7 @@ var app = app || {};
 
         this.get('#/Pictures', function () {
             controllerOne.getPicturesPage(selector);
-            $('title').text('Photoalbum - Pictures')
+            $('title').text('Photoalbum - Pictures');
         });
 
         this.get('#/Categories', function () {
