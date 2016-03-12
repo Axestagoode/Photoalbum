@@ -48,7 +48,7 @@ app.picturesView = (function() {
 
             function votedSuccessfully() {
                 noty({
-                        text: 'Thanks for voting',
+                        text: 'Voting successfully!',
                         layout: 'topCenter',
                         timeout: 2000}
                 );

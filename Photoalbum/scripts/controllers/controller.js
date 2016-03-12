@@ -29,7 +29,7 @@ app.controller = (function() {
     Controller.prototype.getCategoriesPage = function (selector) {
         this.model.getCategories()
             .then(function (data) {
-                app.categoriesView.load(selector, data);
+                app.categoriesView.load(selector, data, this);
             }, function (error) {
                 console.log(error);
             })

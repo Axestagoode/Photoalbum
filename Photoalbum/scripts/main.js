@@ -39,14 +39,14 @@ var app = app || {};
         });
 
         this.get('#/Pictures-by-category', function () {
-            $('a[href="#/Pictures-by-category"]').click(function(event){
-                var div = event.target,
-                    $div = $(div);
-                category = $div.attr("id");
-                console.log(category);
-            });
+            //$('a[href="#/Pictures-by-category"]').click(function(event){
+            //    var div = event.target,
+            //        $div = $(div);
+            //    category = $div.attr("id");
+            //    console.log(category);
+            //});
 
-            controllerOne.getPicturesByCategoryPage(selector, category);
+            //controllerOne.getPicturesByCategoryPage(selector, category);
             $('title').text('Photoalbum - Pictures')
         });
 
