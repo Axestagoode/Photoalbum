@@ -19,10 +19,11 @@ app.categoryViews = (function () {
 
             $('.addPicture').on('click', function () {
                 var parent = $(this).parent(),
-                    categoryId = parent.children('a').children('.likes').attr('id'),
-                    content = prompt('Add picture url');
+                    categoryId = parent.children('div:first').attr('id'),
+                    url = prompt('Add picture url');
+
                 $.sammy(function () {
-                    this.trigger('add-picture', {parent: parent, categoryId: categoryId, content: content})
+                    this.trigger('add-picture', {parent: parent, categoryId: categoryId, url: url})
                 });
             })
         })

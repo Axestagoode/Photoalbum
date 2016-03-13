@@ -1,3 +1,6 @@
+//user: pesho; pass: 123456
+
+
 var app = app || {};
 
 (function() {

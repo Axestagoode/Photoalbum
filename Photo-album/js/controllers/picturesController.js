@@ -23,7 +23,7 @@ app.picturesController = (function () {
                         picture.author._id,
                         picture._id,
                         picture.likes,
-                        picture.comments.length));
+                        picture.comments));
                 });
 
                 _this._viewBag.showPictures(selector, result);
@@ -47,7 +47,7 @@ app.picturesController = (function () {
                         picture.category._id,
                         picture.author._id,
                         picture.likes,
-                        picture.comments.length));
+                        picture.comments));
                 });
 
                  _this._viewBag.showPictures(selector, result);
@@ -57,22 +57,34 @@ app.picturesController = (function () {
     PicturesController.prototype.addPicture = function(data) {
         var _this = this;
         var picture = {
-            content: data.content,
-            question: {
+            name: data.url,
+            url: data.url,
+            category: {
                 _type: 'KinveyRef',
                 _id: data.categoryId,
                 _collection: 'categories'
-            }
+            },
+            author: {
+                _type: 'KinveyRef',
+                _id: sessionStorage.userId,
+                _collection: 'users'
+            },
+            likes: 0,
+            comments: []
         };
 
         this._model.addPicture(picture)
             .then(function() {
                 //reload page with all books after added new one
-                _this.getAllPicturesByCategoryId(data);
 
                 //Sammy(function(){
                 //    this.trigger('redirectUrl', {url: '#/pictures'});
                 //});
+
+                var parent = $(this).parent();
+                $.sammy(function () {
+                    this.trigger('get-pictures', {parent: parent, categoryId: data.categoryId})
+                })
             })
     };
 
