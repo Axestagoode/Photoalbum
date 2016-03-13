@@ -86,6 +86,10 @@ var app = app || {};
             loginController.login(data)
         });
 
+        this.bind('register', function(e, data) {
+            registerController.register(data)
+        });
+
         this.bind('get-pictures', function (e, data) {
             pictureController.getAllPicturesByCategoryId(selector, data);
         });
