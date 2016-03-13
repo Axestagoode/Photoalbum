@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>PhotoAlbum</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/register-style.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.noty.packaged.min.js"></script>
+    <script src="node_modules/q/q.js"></script>
+    <script src="node_modules/shimney-sammy/sammy-0.7.6.min.js"></script>
+    <script src="node_modules/mustache/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header class="container">
+    <div class="row">
+        <h1 class="col-lg-3 col-md-4 col-sm-4">
+            <a href="#/">Photo Album</a>
+        </h1>
+        <nav class="col-lg-9 col-md-8 col-sm-8">
+            <ul class="nav nav-tabs" role="tablist">
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/login">Login</a></li>
+                <li><a href="#/register">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<section class="row">
+</section>
+<div id="wrapper"></div>
+<script src="js/views/pictureViews.js"></script>
+<script src="js/views/categoryViews.js"></script>
+<script src="js/views/userViews.js"></script>
+<script src="js/views/homeViews.js"></script>
+<script src="js/views/loginViews.js"></script>
+<script src="js/views/registerViews.js"></script>
+
+<script src="js/bindingModels/picture.js"></script>
+<script src="js/bindingModels/category.js"></script>
+<script src="js/bindingModels/user.js"></script>
+<script src="js/helpers/requester.js"></script>
+
+<script src="js/models/picturesModel.js"></script>
+<script src="js/models/categoriesModel.js"></script>
+<script src="js/models/usersModel.js"></script>
+
+<script src="js/controllers/picturesController.js"></script>
+<script src="js/controllers/categoriesController.js"></script>
+<script src="js/controllers/usersController.js"></script>
+<script src="js/controllers/homeController.js"></script>
+
+<script src="js/app.js"></script>
+</body>
+</html>

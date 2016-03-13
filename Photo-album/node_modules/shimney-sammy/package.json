@@ -1,0 +1,45 @@
+{
+  "name": "shimney-sammy",
+  "version": "0.7.4-build.1",
+  "main": "main.js",
+  "maintainers": [
+    {
+      "name": "pscheit",
+      "email": "p.scheit@ps-webforge.com"
+    }
+  ],
+  "description": "Shimney package: sammy. Sammy is a RESTful Evented JavaScript framework built on top of jQuery",
+  "keywords": [
+    "framework",
+    "jquery",
+    "sammy"
+  ],
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "homepage": "http://code.quirkey.com/sammy",
+  "config": {
+    "shimney": {
+      "moduleID": "sammy"
+    }
+  },
+  "_id": "shimney-sammy@0.7.4-build.1",
+  "scripts": {},
+  "_shasum": "2cd27a25a91fd8c9f42cc3f6335f7e03291d7956",
+  "_from": "shimney-sammy@*",
+  "_resolved": "https://registry.npmjs.org/shimney-sammy/-/shimney-sammy-0.7.4-build.1.tgz",
+  "_npmVersion": "2.10.0",
+  "_nodeVersion": "5.0.0",
+  "_npmUser": {
+    "name": "pscheit",
+    "email": "p.scheit@ps-webforge.com"
+  },
+  "dist": {
+    "shasum": "2cd27a25a91fd8c9f42cc3f6335f7e03291d7956",
+    "tarball": "http://registry.npmjs.org/shimney-sammy/-/shimney-sammy-0.7.4-build.1.tgz"
+  },
+  "directories": {},
+  "readme": "ERROR: No README data found!"
+}

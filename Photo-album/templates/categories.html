@@ -1,0 +1,13 @@
+<ul>
+    {{#categories}}
+    <li>
+        <h3><strong>{{name}}</strong></h3>
+        <!--<a href="#/Pictures-by-category" id="{{name}}"><div id="{{_id}}"></div></a>-->
+        <div class="getPictures" id="{{_id}}"></div>
+        <div>Pictures: {{pictures.length}}</div>
+        <button type="button" class="addPicture" value="Add Picture">Add Picture</button>
+        <div class="pictures"></div>
+        <br/>
+    </li>
+    {{/categories}}
+</ul>

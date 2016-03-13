@@ -1,0 +1,68 @@
+.container {
+    width: 100%;
+}
+
+#wrapper>ul li {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container>header {
+    background-color: #5680a1;
+    color: white;
+    width: 100%;
+}
+
+.container>header h1 {
+    margin: 0;
+    padding: 5px;
+    font-size: 30px;
+}
+.container>header h3 {
+    margin: 0;
+    padding: 5px;
+    font-size: 10px;
+}
+
+
+.container>header nav ul li.active a {
+    background-color: #428bca;
+}
+
+.jumbotron {
+    margin: 10px 20px 10px 60px;
+}
+
+aside {
+    margin: 10px 10px 40px 60px;
+}
+
+input {
+    display: block;
+}
+
+.getPictures {
+    width: 250px;
+    height: 250px;
+    background-image: url("../resources/slack-logo.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+h3 {
+    text-align: center;
+}
+
+span {
+    float: right;
+}
+
+span> img:hover {
+    cursor: pointer;
+    width: 110%;
+    height: 110%;
+}
