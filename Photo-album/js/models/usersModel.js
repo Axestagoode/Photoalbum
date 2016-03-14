@@ -22,10 +22,6 @@ app.usersModel = (function () {
     };
 
     UsersModel.prototype.getUsers = function () {
-        //var requestUrl = this.requester.baseUrl +
-        //'appdata/' +
-        //this.requester.appId +
-        //'/users';
         return this.requester.get(this.serviceUrl, true);
     };
 

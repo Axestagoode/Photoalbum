@@ -74,7 +74,7 @@ var app = app || {};
 
         this.get('#/users', function () {
             userController.getAllUsers(selector);
-            $('title').text('PhotoAlbum - Pictures')
+            $('title').text('PhotoAlbum - Users')
         });
 
         //listen to custom events
