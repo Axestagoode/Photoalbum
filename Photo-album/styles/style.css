@@ -52,7 +52,7 @@ input {
 .getPictures {
     width: 250px;
     height: 250px;
-    background-image: url("../resources/slack-logo.png");
+    background-image: url("../resources/attach_pic.png");
     background-repeat: no-repeat;
     cursor: pointer;
 }
