@@ -22,6 +22,11 @@ app.picturesModel = (function() {
         return this.requester.post(this.serviceUrl, data, true)
     };
 
+    PicturesModel.prototype.updatePicture = function(pictureId, data) {
+        var requestUrl = this.serviceUrl + '/' + pictureId;
+        return this.requester.put(requestUrl, data, true)
+    };
+
     return {
         load: function(requester) {
             return new PicturesModel(requester);

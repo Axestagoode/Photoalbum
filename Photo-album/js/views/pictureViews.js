@@ -6,14 +6,17 @@ app.pictureViews = (function() {
             var outputHtml = Mustache.render(templ, data);
             $(selector).html(outputHtml);
 
-            var likes = $('span img');
-            likes.click(likeClicked);
+            //var likes = $('span img');
+            //likes.click(likeClicked);
+
+            $('.vote').on('click', likeClicked);
 
             function likeClicked() {
                 var id = $(this).parent()
                     .parent()
                     .parent()
                     .attr('id');
+                var categoryId = $('.catId').text();
 
                 $.ajax({
                     method: "GET",
@@ -25,7 +28,6 @@ app.pictureViews = (function() {
                 }).success(function(data) {
                     var picture = data;
                     picture.likes += 1;
-                    console.log(picture.likes);
                     $.ajax({
                         method: "PUT",
                         headers: {
@@ -35,7 +37,7 @@ app.pictureViews = (function() {
 
                         data : JSON.stringify(picture),
                         url: "https://baas.kinvey.com/appdata/kid_W1-EIBMS1W/pictures/" + id,
-                        success: votedSuccessfully,
+                        success: votedSuccessfully(picture._id, picture.likes),
                         error: ajaxError
 
                     });
@@ -44,12 +46,14 @@ app.pictureViews = (function() {
                 })
             }
 
-            function votedSuccessfully() {
+            function votedSuccessfully(pictureId, likes) {
                 noty({
                         text: 'Voting successfully!',
                         layout: 'topCenter',
                         timeout: 2000}
                 );
+                var likeSpan = $('span[data-id *=' + pictureId + ']');
+                likeSpan.text(likes);
             }
 
             function ajaxError() {
