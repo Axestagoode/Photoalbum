@@ -96,6 +96,11 @@ var app = app || {};
         this.bind('add-picture', function (e, data) {
             pictureController.addPicture(data);
         });
+
+        this.bind('enlarge-picture', function (e, data) {
+            console.log(data)
+            pictureController.getPictureById(selector, data.pictureId);
+        });
     });
 
     app.router.run('#/');

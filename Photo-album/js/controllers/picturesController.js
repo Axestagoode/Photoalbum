@@ -116,6 +116,24 @@ app.picturesController = (function () {
             })
     };
 
+    PicturesController.prototype.getPictureById = function(selector, pictureId) {
+        var _this = this;
+
+        this._model.getPictureById(pictureId)
+            .then(function (data) {
+                var picture = new Picture(
+                    data.name,
+                    data.url,
+                    data.category._id,
+                    data.author._id,
+                    data._id,
+                    data.likes,
+                    data.comments);
+
+                _this._viewBag.enlargePicture(selector, picture);
+            }).done();
+    };
+
     return {
         load: function (model, viewBag, router) {
             return new PicturesController(model, viewBag, router);

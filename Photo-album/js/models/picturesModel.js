@@ -27,6 +27,11 @@ app.picturesModel = (function() {
         return this.requester.put(requestUrl, data, true)
     };
 
+    PicturesModel.prototype.getPictureById = function (pictureId) {
+        var requestUrl = this.serviceUrl + '/' + pictureId;
+        return this.requester.get(requestUrl, true);
+    };
+
     return {
         load: function(requester) {
             return new PicturesModel(requester);

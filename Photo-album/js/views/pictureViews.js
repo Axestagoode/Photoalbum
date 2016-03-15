@@ -1,6 +1,7 @@
 var app = app || {};
 
 app.pictureViews = (function() {
+    var _this = this;
     function showPictures(selector, data) {
         $.get('templates/pictures.html', function(templ){
             var outputHtml = Mustache.render(templ, data);
@@ -48,9 +49,6 @@ app.pictureViews = (function() {
                         alreadyVoted();
                     }
 
-
-
-
                 }).error(function() {
                     console.log('Cannot load pictures.');
                 })
@@ -84,13 +82,30 @@ app.pictureViews = (function() {
                 //);
                 console.log('Cannot load AJAX data.')
             }
+
+            $('.enlarge').on('click', function() {
+                var parent = $(this).parent(),
+                    pictureId = parent.attr("id");
+
+                $.sammy(function () {
+                    this.trigger('enlarge-picture', {parent: parent, pictureId: pictureId})
+                })
+            });
+        });
+    }
+
+    function enlargePicture(selector, data) {
+        $.get('templates/picture-details.html', function(templ){
+            var outputHtml = Mustache.render(templ, data);
+            $(selector).html(outputHtml);
         });
     }
 
     return {
         load: function() {
             return {
-                showPictures: showPictures
+                showPictures: showPictures,
+                enlargePicture: enlargePicture
             }
         }
     }
