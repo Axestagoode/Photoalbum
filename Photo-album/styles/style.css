@@ -50,10 +50,17 @@ input {
 }
 
 .getPictures {
+<<<<<<< HEAD
     width: 256px;
     height: 256px;
     /*background-image: url("../resources/slack-logo.png");*/
     /*background-repeat: no-repeat;*/
+=======
+    width: 250px;
+    height: 250px;
+    background-image: url("../resources/attach_pic.png");
+    background-repeat: no-repeat;
+>>>>>>> b7f75f25fd1032db27066b1b27e8e802ba711e01
     cursor: pointer;
 }
 
