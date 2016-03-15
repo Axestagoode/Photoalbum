@@ -27,22 +27,32 @@ app.pictureViews = (function() {
                     url: "https://baas.kinvey.com/appdata/kid_W1-EIBMS1W/pictures/" + id
                 }).success(function(data) {
                     var picture = data;
-                    picture.likes += 1;
-                    $.ajax({
-                        method: "PUT",
-                        headers: {
-                            "Authorization": "Basic cGVzaG86MTIzNDU2",
-                            "Content-Type": "application/json"
-                        },
+                    var userId = sessionStorage.userId;
 
-                        data : JSON.stringify(picture),
-                        url: "https://baas.kinvey.com/appdata/kid_W1-EIBMS1W/pictures/" + id,
-                        success: votedSuccessfully(picture._id, picture.likes),
-                        error: ajaxError
+                    if(localStorage[picture._id] != userId){
+                        localStorage.setItem(picture._id, userId);
+                        picture.likes += 1;
+                        $.ajax({
+                            method: "PUT",
+                            headers: {
+                                "Authorization": "Basic cGVzaG86MTIzNDU2",
+                                "Content-Type": "application/json"
+                            },
 
-                    });
+                            data : JSON.stringify(picture),
+                            url: "https://baas.kinvey.com/appdata/kid_W1-EIBMS1W/pictures/" + id,
+                            success: votedSuccessfully(picture._id, picture.likes),
+                            error: ajaxError
+                        });
+                    } else{
+                        alreadyVoted();
+                    }
+
+
+
+
                 }).error(function() {
-                    alert('Cannot load pictures.');
+                    console.log('Cannot load pictures.');
                 })
             }
 
@@ -56,13 +66,23 @@ app.pictureViews = (function() {
                 likeSpan.text(likes);
             }
 
-            function ajaxError() {
+            function alreadyVoted() {
                 noty({
-                        text: 'Cannot load AJAX data.',
+                        text: 'You have voted already!',
                         type: 'error',
                         layout: 'topCenter',
-                        timeout: 5000}
+                        timeout: 2000}
                 );
+            }
+
+            function ajaxError() {
+                //noty({
+                //        text: 'Cannot load AJAX data.',
+                //        type: 'error',
+                //        layout: 'topCenter',
+                //        timeout: 5000}
+                //);
+                console.log('Cannot load AJAX data.')
             }
         });
     }
