@@ -10,6 +10,11 @@
     font-size: 20px;
 }
 
+.users>a{
+    font-size: 20px;
+    display: block;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -41,31 +46,19 @@ a {
 .jumbotron {
     margin: 10px 20px 10px 60px;
     border-radius: 20px;
-
-    /*margin: 20px 20px 20px 60px;*/
-    /*background-image: url("../resources/front.png");*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: right;*/
-
+    height: 400px;
+    width: 300px;
+    background-image: url("../resources/sky.jpg");
 }
 
-/*.jumbotron >h4 {*/
+.axestagood {
+    color: #ffffff;
+}
 
-    /*font-size: 24px;*/
-    /*color: #7a43b6;*/
-/*}*/
-
-/*.jumbotron >h5 {*/
-    /*font-size: 12px;*/
-    /*color: #c9302c;*/
-/*}*/
-/*.jumbotron >h6 {*/
-
-    /*font-size: 12px;*/
-    /*color: #428bca;*/
-
-/*>>>>>>> 99a13ce85437f5541587e4374aaab89b2a72fc36*/
-/*}*/
+#axestagood {
+    margin-top: -20px;
+    color: #f5f5f5;
+}
 
 aside {
     margin: 10px 10px 40px 60px;
