@@ -25,6 +25,8 @@ var app = app || {};
     var homeController = app.homeController.load(homeViewBag);
 
 
+
+
     app.router = $.sammy(function () {
         var selector = '#wrapper';
 
