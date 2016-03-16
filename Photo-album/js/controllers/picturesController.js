@@ -15,6 +15,10 @@ app.picturesController = (function () {
                     pictures: []
                 };
 
+                //sort by rating
+                pictures = pictures.sort(function (a, b) {
+                    return b.likes - a.likes
+                });
 
                 pictures.forEach(function (picture) {
                     result.pictures.push(new Picture(

@@ -24,9 +24,6 @@ var app = app || {};
     var pictureController = app.picturesController.load(pictureModel, pictureViewBag);
     var homeController = app.homeController.load(homeViewBag);
 
-
-
-
     app.router = $.sammy(function () {
         var selector = '#wrapper';
 
@@ -100,7 +97,6 @@ var app = app || {};
         });
 
         this.bind('enlarge-picture', function (e, data) {
-            console.log(data)
             pictureController.getPictureById(selector, data.pictureId);
         });
     });

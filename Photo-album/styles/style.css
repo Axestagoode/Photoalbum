@@ -170,3 +170,37 @@ span> img:hover {
     text-align: center;
 }
 
+#picture-name{
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid blue;
+    padding: 10px;
+}
+
+.picture-upload {
+    width: 250px;
+    height: 50px;
+    background-color: #008CBA;;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 15px;
+}
+.picture-upload input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}

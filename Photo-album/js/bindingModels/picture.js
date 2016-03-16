@@ -9,5 +9,17 @@ var Picture = (function() {
         this.comments = comments || [];
     }
 
+    Picture.prototype.getPictureInputModel = function getPictureInputModel(){
+        return {
+            base64data: this.url,
+            comment: this.comments,
+            rating: this.likes,
+            albumId: this.categoryId,
+            name: this.name,
+            id: this._id,
+            author: this.authorId
+        }
+    };
+
     return Picture;
 }());
