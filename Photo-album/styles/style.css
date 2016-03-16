@@ -93,8 +93,29 @@ input {
 }
 
 h3 {
-    text-align: center;
+    text-align: left;
 }
+
+.row>h3 {
+    text-align: left;
+    font-size: 18px;
+}
+
+.users>h3 {
+    text-align: left;
+    font-size: 16px;
+}
+
+.cat-pics>h3{
+text-align: center;
+}
+
+.mail>h4 {
+    text-align: left;
+    font-size: 12px;
+    color: #428bca;
+}
+
 
 .voteImg {
     float: right;

@@ -1,0 +1,13 @@
+<ul class="users">
+    <div class="col">
+        <!--<p class="users_loading"> <img src="https://shortpixel.com/img/spinner2.gif" alt="loading"></p>-->
+        <h3><i class="glyphicon glyphicon-user"></i> Users</h3>
+    </div>
+    {{#users}}
+    <li >
+        <h3><strong>{{username}}</strong></h3>
+        <a href="#">{{email}}</a>
+        <br/>
+    </li>
+    {{/users}}
+</ul>
