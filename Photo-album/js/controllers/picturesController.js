@@ -15,6 +15,7 @@ app.picturesController = (function () {
                     pictures: []
                 };
 
+
                 pictures.forEach(function (picture) {
                     result.pictures.push(new Picture(
                         picture.name,
@@ -26,7 +27,10 @@ app.picturesController = (function () {
                         picture.comments));
                 });
 
+                //var sortedByLikes = _.sortBy(result.pictures, 'likes');
+                //_this._viewBag.showPictures(selector, sortedByLikes.reverse());
                 _this._viewBag.showPictures(selector, result);
+
             }).done();
     };
 

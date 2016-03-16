@@ -7,9 +7,6 @@ app.pictureViews = (function() {
             var outputHtml = Mustache.render(templ, data);
             $(selector).html(outputHtml);
 
-            //var likes = $('span img');
-            //likes.click(likeClicked);
-
             $('.vote').on('click', likeClicked);
 
             function likeClicked() {
