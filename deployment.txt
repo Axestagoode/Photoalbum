@@ -1,8 +1,8 @@
-http://axestagoode.mipropia.com/#/
+http://teamaxestagoode.mipropia.com
 
 cpanel.mipropia.com - ottuk control
 
-username: mipc_17680803
-p-w: dddddd
+ID: mipc_17683279
+PW: dddddd
 
 ako e nujen re-upload -> online file manager -> kachva se zipnat proekta ni v htdocs 

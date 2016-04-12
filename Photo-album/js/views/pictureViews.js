@@ -7,6 +7,9 @@ app.pictureViews = (function() {
             var outputHtml = Mustache.render(templ, data);
             $(selector).html(outputHtml);
 
+            var currUser = sessionStorage.username;
+            $('#greet-user').text('Hello, ' + currUser);
+
             $('.vote').on('click', likeClicked);
 
             function likeClicked() {

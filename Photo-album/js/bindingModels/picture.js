@@ -1,9 +1,10 @@
 var Picture = (function() {
-    function Picture(name, url, categoryId, authorId, id, likes, comments) {
+    function Picture(name, url, categoryId, authorId, author, id, likes, comments) {
         this.name = name;
         this.url = url;
         this.categoryId = categoryId;
         this.authorId = authorId;
+        this.authorUsername = author;
         this._id = id;
         this.likes = likes || 0;
         this.comments = comments || [];

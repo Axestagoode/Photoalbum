@@ -45,7 +45,7 @@ app.categoryViews = (function () {
                     reader.addEventListener("load", function () {
 
                         $.sammy(function () {
-                            this.trigger('add-picture', {parent: parent, categoryId: categoryId, url: reader.result})
+                            this.trigger('add-picture', {parent: parent, categoryId: categoryId, url: reader.result, name:pictureName.val()})
                         })
                     }, false);
 

@@ -1,9 +1,11 @@
+<h1 id="greet-user">Hello, {{currUser}}</h1>
 <ul>
     {{#pictures}}
     <li id="{{_id}}">
         <div><strong>{{name}}</strong></div>
         <img src="{{url}}" alt="{{name}}" width="300" height="200" class="enlarge">
-        <div>Author: {{authorId}} <span class="voteImg"><img class="vote" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScbfEp6KAd1T9ZgOXLt4BF_pyX5rvHh-QWU87FCs7qqVlm0VTJ"></span></div>
+        <!--<div>Author: {{authorId}} <span class="voteImg"><img class="vote" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScbfEp6KAd1T9ZgOXLt4BF_pyX5rvHh-QWU87FCs7qqVlm0VTJ"></span></div>-->
+        <div>Author: {{authorUsername}} <span class="voteImg"><img class="vote" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcScbfEp6KAd1T9ZgOXLt4BF_pyX5rvHh-QWU87FCs7qqVlm0VTJ"></span></div>
         <!--<div>Category: <span class="catId">{{categoryId}}</span></div>-->
         <div>Likes: <span data-id="{{_id}}">{{likes}}</span></div>
         <div>Comments: {{comments.length}}</div>

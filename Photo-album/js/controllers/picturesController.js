@@ -26,6 +26,7 @@ app.picturesController = (function () {
                         picture.url,
                         picture.category._id,
                         picture.author._id,
+                        picture.author._username,
                         picture._id,
                         picture.likes,
                         picture.comments));
@@ -33,6 +34,7 @@ app.picturesController = (function () {
 
                 //var sortedByLikes = _.sortBy(result.pictures, 'likes');
                 //_this._viewBag.showPictures(selector, sortedByLikes.reverse());
+
                 _this._viewBag.showPictures(selector, result);
 
             }).done();
@@ -54,6 +56,7 @@ app.picturesController = (function () {
                         picture.url,
                         picture.category._id,
                         picture.author._id,
+                        picture.author._username,
                         picture._id,
                         picture.likes,
                         picture.comments));
@@ -65,11 +68,12 @@ app.picturesController = (function () {
 
     PicturesController.prototype.addPicture = function(data) {
         var _this = this;
-        var shortname = data.url.slice(-30);
+        //var shortname = data.url.slice(-30);
 
         var picture = {
             url: data.url,
-            name: shortname,
+            //name: shortname,
+            name: data.name,
             category: {
                 _type: 'KinveyRef',
                 _id: data.categoryId,
@@ -78,6 +82,7 @@ app.picturesController = (function () {
             author: {
                 _type: 'KinveyRef',
                 _id: sessionStorage.userId,
+                _username: sessionStorage.username,
                 _collection: 'users'
             },
             likes: 0,
@@ -107,6 +112,7 @@ app.picturesController = (function () {
             author: {
                 _type: 'KinveyRef',
                 _id: sessionStorage.userId,
+                _username: sessionStorage.username,
                 _collection: 'users'
             },
             _id: data._id,
@@ -134,6 +140,7 @@ app.picturesController = (function () {
                     data.url,
                     data.category._id,
                     data.author._id,
+                    data.author._username,
                     data._id,
                     data.likes,
                     data.comments);
